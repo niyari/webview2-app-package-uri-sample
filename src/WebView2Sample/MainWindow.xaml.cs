@@ -20,11 +20,16 @@ namespace WebView2Sample
 
         private async void myWebView2_InitializeAsync()
         {
-            await myWebView2.EnsureCoreWebView2Async();
-            if (myWebView2.CoreWebView2 != null)
+            await myWebView2.EnsureCoreWebView2Async(); // Wait until the components are ready.
+            if (myWebView2.CoreWebView2 is not null)
             {
+                // If exception handling occurs, please check "ItemGroup > Content Include" in the .csproj file.
+                // Error example:
+                //  Exception thrown Microsoft C++ : winrt::hresult_error
+                //  System.IO.DirectoryNotFoundException: 'The system cannot find the path specified. (0x80070003)'
                 myWebView2.CoreWebView2.SetVirtualHostNameToFolderMapping(
                     "appassets.example", "AppAssets", CoreWebView2HostResourceAccessKind.DenyCors);
+                // <Content Include="AppAssets\res\html\index.html" />
                 myWebView2.Source = new Uri("https://appassets.example/res/html/index.html");
             }
         }
