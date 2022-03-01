@@ -15,6 +15,7 @@
     "Microsoft.VisualStudio.Component.Windows10SDK.19041",
     "Microsoft.ComponentGroup.Blend",
     "Microsoft.VisualStudio.ComponentGroup.MSIX.Packaging",
+    "Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cs",
     "Microsoft.Component.NetFX.Native",
     "Microsoft.VisualStudio.ComponentGroup.UWP.NetCoreAndStandard",
     "Microsoft.VisualStudio.Component.Graphics",
